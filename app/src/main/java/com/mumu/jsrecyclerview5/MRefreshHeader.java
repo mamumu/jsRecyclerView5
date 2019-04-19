@@ -78,7 +78,8 @@ public class MRefreshHeader extends LinearLayout implements RefreshHeader {
      * 注意：这三种状态都是初始化的状态
      */
     @Override
-    public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
+    public void onStateChanged(@NonNull RefreshLayout refreshLayout,
+                               @NonNull RefreshState oldState, @NonNull RefreshState newState) {
         switch (newState) {
             //1,下拉刷新的开始状态：下拉可以刷新
             case PullDownToRefresh:

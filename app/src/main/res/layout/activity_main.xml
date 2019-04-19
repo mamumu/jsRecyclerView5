@@ -20,10 +20,10 @@
             android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#5500ff00">
+            android:background="#5500ff00"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/text"
@@ -34,5 +34,8 @@
                 android:textSize="30sp" />
         </LinearLayout>
 
+        <com.mumu.jsrecyclerview5.MRefreshFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>
