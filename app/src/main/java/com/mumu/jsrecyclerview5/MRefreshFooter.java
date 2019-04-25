@@ -88,15 +88,13 @@ public class MRefreshFooter extends LinearLayout implements RefreshFooter {
 
     @Override
     public void onStartAnimator(@NonNull RefreshLayout refreshLayout, int height, int maxDragHeight) {
-        if (mAnim != null) {
-            mImage.startAnimation(mAnim);
-        }
     }
 
     @Override
     public int onFinish(@NonNull RefreshLayout refreshLayout, boolean success) {
-        if (mAnim != null) {
+        if(mAnim != null && mAnim.hasStarted() && !mAnim.hasEnded()){
             mAnim.cancel();
+            mImage.clearAnimation();
         }
         return 0;
     }
@@ -113,6 +111,20 @@ public class MRefreshFooter extends LinearLayout implements RefreshFooter {
 
     @Override
     public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
+        switch (newState) {
+            case None:
+            case PullUpToLoad:
+                if (mAnim != null) {
+                    mImage.startAnimation(mAnim);
+                }
+                break;
+            case Loading:
 
+            case LoadReleased:
+
+                break;
+            case ReleaseToLoad:
+                break;
+        }
     }
 }

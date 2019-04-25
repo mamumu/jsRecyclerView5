@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
                 //2，刷新完成关闭，正常情况是请求接口完成关闭
+                //3,如果需要在网络请求结束后关闭，则调用
+//                smart.finishRefresh();
+//                smart.finishLoadMore();
                 refreshLayout.finishRefresh();
                 refreshLayout.setNoMoreData(true);
             }
