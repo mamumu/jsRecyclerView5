@@ -72,7 +72,8 @@ public class MRefreshFooter extends LinearLayout implements RefreshFooter {
 
     @Override
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int maxDragHeight) {
-
+        //控制是否稍微上滑动就刷新
+        kernel.getRefreshLayout().setEnableAutoLoadMore(false);
     }
 
     @Override

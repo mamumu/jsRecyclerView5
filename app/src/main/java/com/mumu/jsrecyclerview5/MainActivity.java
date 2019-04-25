@@ -53,14 +53,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
                 //2，刷新完成关闭，正常情况是请求接口完成关闭
-                //延迟3秒关闭
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshLayout.finishRefresh();
-                        refreshLayout.setNoMoreData(true);
-                    }
-                }, 3000);
+                refreshLayout.finishRefresh();
+                refreshLayout.setNoMoreData(true);
             }
         });
     }
